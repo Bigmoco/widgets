@@ -1,7 +1,3 @@
----
-layout: none
----
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,19 +17,19 @@ li { margin: 4px 0; }
 <!-- AF3 Layouts -->
 <h2>AF3</h2>
 <ul>
-{% assign zips = site.static_files | where_exp: "f", "f.extname == '.zip' and f.name contains 'af3'" | sort: "name" | reverse %}
-{% for file in zips %}
-  <li><a href="{{ '/' | append: file.name }}">{{ file.name }}</a></li>
-{% endfor %}
+  <li><a href="/af3_tmdb.3.1.4.zip">af3_tmdb.3.1.4.zip</a></li>
+  <li><a href="/af3_fenlight.3.1.4.zip">af3_fenlight.3.1.4.zip</a></li>
+  <li><a href="/af3_pov.3.1.4.zip">af3_pov.3.1.4.zip</a></li>
+  <li><a href="/af3_umbrella.3.1.4.zip">af3_umbrella.3.1.4.zip</a></li>
 </ul>
 
 <!-- Bingie Layouts -->
 <h2>Bingie</h2>
 <ul>
-{% assign zips = site.static_files | where_exp: "f", "f.extname == '.zip' and f.name contains 'bingie'" | sort: "name" | reverse %}
-{% for file in zips %}
-  <li><a href="{{ '/' | append: file.name }}">{{ file.name }}</a></li>
-{% endfor %}
+  <li><a href="/bingie_tmdb.2.0.0.zip">bingie_tmdb.2.0.0.zip</a></li>
+  <li><a href="/bingie_fenlight.2.0.0.zip">bingie_fenlight.2.0.0.zip</a></li>
+  <li><a href="/bingie_pov.2.0.0.zip">bingie_pov.2.0.0.zip</a></li>
+  <li><a href="/bingie_umbrella.2.0.0.zip">bingie_umbrella.2.0.0.zip</a></li>
 </ul>
 
 </body>
