@@ -10,7 +10,6 @@ layout: none
 <style>
 body { font-family: sans-serif; padding: 20px; }
 h1 { font-size: 24px; margin-bottom: 10px; }
-h2 { font-size: 20px; margin-top: 20px; margin-bottom: 8px; }
 li { margin: 4px 0; }
 </style>
 </head>
@@ -18,21 +17,12 @@ li { margin: 4px 0; }
 
 <h1>Widget Backups</h1>
 
-<!-- AF3 Layouts -->
-<h2>AF3</h2>
 <ul>
-{% assign zips = site.static_files | where_exp: "f", "f.extname == '.zip' and f.name contains 'af3'" | sort: "name" | reverse %}
+{% assign zips = site.static_files | where_exp: "f", "f.extname == '.zip'" | sort: "name" | reverse %}
 {% for file in zips %}
-  <li><a href="{{ file.path | relative_url }}">{{ file.name }}</a></li>
-{% endfor %}
-</ul>
-
-<!-- Bingie Layouts -->
-<h2>Bingie</h2>
-<ul>
-{% assign zips = site.static_files | where_exp: "f", "f.extname == '.zip' and f.name contains 'bingie'" | sort: "name" | reverse %}
-{% for file in zips %}
-  <li><a href="{{ file.path | relative_url }}">{{ file.name }}</a></li>
+  <li>
+    <a href="{{ file.path | relative_url }}">{{ file.name }}</a>
+  </li>
 {% endfor %}
 </ul>
 
