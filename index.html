@@ -8,7 +8,8 @@ layout: none
 <meta charset="utf-8">
 <title>Widget Backups</title>
 <style>
-body { font-family: sans-serif; }
+body { font-family: sans-serif; padding: 20px; }
+h1 { font-size: 24px; margin-bottom: 10px; }
 li { margin: 4px 0; }
 </style>
 </head>
@@ -17,7 +18,7 @@ li { margin: 4px 0; }
 <h1>Widget Backups</h1>
 
 <ul>
-{% assign zips = site.static_files | where_exp: "f", "f.extname == '.zip'" %}
+{% assign zips = site.static_files | where_exp: "f", "f.extname == '.zip'" | sort: "name" | reverse %}
 {% for file in zips %}
   <li>
     <a href="{{ file.path }}">{{ file.name }}</a>
